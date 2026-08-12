@@ -1,0 +1,9 @@
+<resources>
+    <color name="ink">#241A24</color>
+    <color name="paper">#FFF7E8</color>
+    <color name="teal">#22B8C7</color>
+    <color name="pink">#FF5A8A</color>
+    <color name="purple">#7B61FF</color>
+    <color name="amber">#FFB446</color>
+    <color name="danger">#D94A3D</color>
+</resources>

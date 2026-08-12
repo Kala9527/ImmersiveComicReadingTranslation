@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">漫画悬浮翻译</string>
+    <string name="notification_channel">悬浮翻译服务</string>
+    <string name="notification_text">悬浮球正在运行，点击悬浮球翻译当前屏幕。</string>
+</resources>
