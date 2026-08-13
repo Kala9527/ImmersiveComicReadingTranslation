@@ -1,74 +1,52 @@
-﻿# Immersive Comic Reading Translation
+# Immersive Comic Reading Translation
 
 [中文说明](./README.cn.md)
 
-> Android floating OCR and AI translation MVP for manga, comics, screenshots, and immersive reading.  
+> Android OCR overlay translator for comic reading with configurable vision and text models.
 
-This repository is packaged to be easy to **star, fork, run, remix, and contribute to**. It keeps a dedicated English version for global GitHub discovery, with a separate Chinese version linked above.
+![android](https://img.shields.io/badge/android-111827?style=flat-square) ![java](https://img.shields.io/badge/java-111827?style=flat-square) ![ocr](https://img.shields.io/badge/ocr-111827?style=flat-square) ![translation](https://img.shields.io/badge/translation-111827?style=flat-square) ![openai-compatible](https://img.shields.io/badge/openai-compatible-111827?style=flat-square)
 
-## Why Star This
+## Showcase
 
-- Practical project idea with a clear real-world use case.
-- Small enough to fork, study, and customize quickly.
-- English-first bilingual README for both global and Chinese-speaking developers.
-- Clean setup instructions, project structure, roadmap, and contribution entry points.
-- Built around popular GitHub themes such as AI tools, TypeScript, developer tools, local-first apps, automation, and indie-friendly workflows when relevant.
-
-## What It Does
-
-Android floating OCR and AI translation MVP for manga, comics, screenshots, and immersive reading.
+![Immersive Comic Reading Translation showcase](./docs/images/github-showcase.png)
 
 ## Highlights
 
-- Floating overlay workflow for comic reading
-- Screen capture permission flow and foreground service
-- Separate OCR and translation provider configuration
-- Android Keystore storage for API keys
-- Side translation panel with retry and copy actions
-
-## Tech Stack
-
-`	ext
-Android, Java, OCR, OpenAI-compatible APIs
-`
+- android
+- java
+- ocr
+- translation
+- openai compatible
+- Practical project structure for learning, demos, and remixing.
+- Local-first setup where secrets, generated files, and build output stay out of Git.
 
 ## Quick Start
 
-`ash
-./gradlew assembleDebug`n# Windows: gradlew.bat assembleDebug`n# Or open the project in Android Studio and run the app module
-`
+```bash
+gradlew.bat assembleDebug
+```
 
 ## Project Structure
 
-`	ext
+```text
 .
 |-- src/ or app/          Main source code
 |-- public/ or assets/    Static assets when available
-|-- docs/                 Notes, specs, or deployment docs when available
-|-- README.md             English-first bilingual project guide
--- package / project files
-`
-
-## Deployment / Packaging
-
-- Do not commit generated builds, local databases, API keys, private logs, or large media files.
-- For frontend projects, deploy the production dist/ folder to GitHub Pages, Vercel, Netlify, Nginx, or package it with DistDesktopLauncher.
-- For desktop/mobile projects, publish only release artifacts from a clean build environment.
-- Keep configuration examples public and real credentials private.
+|-- docs/                 Screenshots, notes, or deployment docs
+|-- README.md             GitHub landing README
+|-- README.en.md          English documentation
+`-- README.cn.md          Chinese documentation
+```
 
 ## Roadmap
 
-- [ ] Region selection and panel positioning
-- [ ] Bubble overlay translation mode
-- [ ] Offline OCR provider option
-- [ ] Better manga page segmentation
+- [ ] Add more real-world examples and screenshots.
+- [ ] Expand tests or smoke checks for the primary workflow.
+- [ ] Publish clean release artifacts where the project type supports it.
+- [ ] Keep documentation friendly for new contributors.
 
 ## Contributing
 
-Issues and pull requests are welcome. Useful contributions include better screenshots, demos, docs, templates, presets, provider guides, compatibility fixes, tests, and translations.
+Issues and pull requests are welcome. Useful contributions include screenshots, demos, docs, templates, presets, compatibility fixes, tests, and translations.
 
 If this project helps you, a star and fork make it easier for more people to discover it.
-
-
-
-
