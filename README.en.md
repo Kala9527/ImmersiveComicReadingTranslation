@@ -1,85 +1,74 @@
-# Immersive Comic Reading Translation
+﻿# Immersive Comic Reading Translation
 
-Immersive Comic Reading Translation is an Android MVP for floating comic translation while reading. It uses overlay windows, screen capture, OCR, and OpenAI-compatible translation endpoints to show translated results in a side panel.
+[中文说明](./README.cn.md)
+
+> Android floating OCR and AI translation MVP for manga, comics, screenshots, and immersive reading.  
+
+This repository is packaged to be easy to **star, fork, run, remix, and contribute to**. It keeps a dedicated English version for global GitHub discovery, with a separate Chinese version linked above.
+
+## Why Star This
+
+- Practical project idea with a clear real-world use case.
+- Small enough to fork, study, and customize quickly.
+- English-first bilingual README for both global and Chinese-speaking developers.
+- Clean setup instructions, project structure, roadmap, and contribution entry points.
+- Built around popular GitHub themes such as AI tools, TypeScript, developer tools, local-first apps, automation, and indie-friendly workflows when relevant.
+
+## What It Does
+
+Android floating OCR and AI translation MVP for manga, comics, screenshots, and immersive reading.
 
 ## Highlights
 
-- Native Android Java project, ready for Android Studio.
-- Separate OCR and translation model configuration.
-- OpenAI-compatible `/chat/completions` style API support.
-- API keys stored with Android Keystore.
-- Overlay permission, screen capture permission, and foreground service flow.
-- Tap the floating button to capture the screen and run OCR -> correction/translation.
-- Side panel with expand/collapse, copy, retry, and quick settings.
-- Stage-aware errors for permissions, capture, OCR network/parsing, and translation network/parsing.
+- Floating overlay workflow for comic reading
+- Screen capture permission flow and foreground service
+- Separate OCR and translation provider configuration
+- Android Keystore storage for API keys
+- Side translation panel with retry and copy actions
 
-## Structure
+## Tech Stack
 
-```text
+`	ext
+Android, Java, OCR, OpenAI-compatible APIs
+`
+
+## Quick Start
+
+`ash
+./gradlew assembleDebug`n# Windows: gradlew.bat assembleDebug`n# Or open the project in Android Studio and run the app module
+`
+
+## Project Structure
+
+`	ext
 .
-├─ app/
-│  ├─ build.gradle
-│  └─ src/
-│     ├─ main/
-│     └─ debug/
-├─ gradle/wrapper/
-├─ build.gradle
-├─ settings.gradle
-└─ gradlew.bat
-```
+|-- src/ or app/          Main source code
+|-- public/ or assets/    Static assets when available
+|-- docs/                 Notes, specs, or deployment docs when available
+|-- README.md             English-first bilingual project guide
+-- package / project files
+`
 
-## Development
+## Deployment / Packaging
 
-Requirements:
+- Do not commit generated builds, local databases, API keys, private logs, or large media files.
+- For frontend projects, deploy the production dist/ folder to GitHub Pages, Vercel, Netlify, Nginx, or package it with DistDesktopLauncher.
+- For desktop/mobile projects, publish only release artifacts from a clean build environment.
+- Keep configuration examples public and real credentials private.
 
-- Android Studio
-- JDK 17
-- Android SDK with compileSdk 36
+## Roadmap
 
-Open the project root in Android Studio, let Gradle sync, then run the `app` module.
+- [ ] Region selection and panel positioning
+- [ ] Bubble overlay translation mode
+- [ ] Offline OCR provider option
+- [ ] Better manga page segmentation
 
-## Build APK
+## Contributing
 
-Windows:
+Issues and pull requests are welcome. Useful contributions include better screenshots, demos, docs, templates, presets, provider guides, compatibility fixes, tests, and translations.
 
-```powershell
-.\gradlew.bat assembleDebug
-```
+If this project helps you, a star and fork make it easier for more people to discover it.
 
-macOS / Linux:
 
-```bash
-./gradlew assembleDebug
-```
 
-APK output:
 
-```text
-app/build/outputs/apk/debug/app-debug.apk
-```
-
-## Usage
-
-1. Install the APK.
-2. Configure OCR and translation Base URL, model ID, and API Key.
-3. Test both OCR and translation models.
-4. Start floating translation.
-5. Grant overlay and screen capture permissions.
-6. Switch to a comic app and tap the floating button to translate.
-
-## MVP Scope
-
-- No cloud API key is bundled.
-- Screenshots are captured only after user action.
-- The current version shows a side translation panel instead of bubble-level image overlays.
-- Android blocks capture on `FLAG_SECURE` pages.
-
-## Notes
-
-- `.gradle/`, `build/`, `.idea/`, APKs, and local outputs are ignored.
-- `local.properties` contains local SDK paths and should not be committed.
-- Please respect platform rules, model service policies, and content copyright.
-
-## Thanks
-
-Thank you for checking out this MVP. If this direction feels useful, a Star, Fork, issue, or suggestion would mean a lot and will help me keep improving it.
