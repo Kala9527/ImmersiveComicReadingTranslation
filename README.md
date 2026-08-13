@@ -1,84 +1,111 @@
-# Immersive Comic Reading Translation
+﻿# Immersive Comic Reading Translation
 
-Immersive Comic Reading Translation 是一个 Android 漫画沉浸式悬浮翻译 MVP。它通过悬浮窗、屏幕捕获、OCR 和 OpenAI 兼容翻译接口，在阅读漫画时提供侧边翻译结果面板。
+> Android floating OCR and AI translation MVP for manga, comics, screenshots, and immersive reading.  
+> 中文：Android 漫画沉浸式悬浮 OCR 与 AI 翻译 MVP，适合漫画、截图和阅读辅助场景。
+
+This repository is packaged to be easy to **star, fork, run, remix, and contribute to**. It keeps the first screen English-first for global GitHub discovery, while preserving a Chinese guide below.
+
+## Why Star This
+
+- Practical project idea with a clear real-world use case.
+- Small enough to fork, study, and customize quickly.
+- English-first bilingual README for both global and Chinese-speaking developers.
+- Clean setup instructions, project structure, roadmap, and contribution entry points.
+- Built around popular GitHub themes such as AI tools, TypeScript, developer tools, local-first apps, automation, and indie-friendly workflows when relevant.
+
+## What It Does
+
+Android floating OCR and AI translation MVP for manga, comics, screenshots, and immersive reading.
+
+## Highlights
+
+- Floating overlay workflow for comic reading
+- Screen capture permission flow and foreground service
+- Separate OCR and translation provider configuration
+- Android Keystore storage for API keys
+- Side translation panel with retry and copy actions
+
+## Tech Stack
+
+`	ext
+Android, Java, OCR, OpenAI-compatible APIs
+`
+
+## Quick Start
+
+`ash
+./gradlew assembleDebug`n# Windows: gradlew.bat assembleDebug`n# Or open the project in Android Studio and run the app module
+`
+
+## Project Structure
+
+`	ext
+.
+|-- src/ or app/          Main source code
+|-- public/ or assets/    Static assets when available
+|-- docs/                 Notes, specs, or deployment docs when available
+|-- README.md             English-first bilingual project guide
+-- package / project files
+`
+
+## Deployment / Packaging
+
+- Do not commit generated builds, local databases, API keys, private logs, or large media files.
+- For frontend projects, deploy the production dist/ folder to GitHub Pages, Vercel, Netlify, Nginx, or package it with DistDesktopLauncher.
+- For desktop/mobile projects, publish only release artifacts from a clean build environment.
+- Keep configuration examples public and real credentials private.
+
+## Roadmap
+
+- [ ] Region selection and panel positioning
+- [ ] Bubble overlay translation mode
+- [ ] Offline OCR provider option
+- [ ] Better manga page segmentation
+
+## Contributing
+
+Issues and pull requests are welcome. Useful contributions include better screenshots, demos, docs, templates, presets, provider guides, compatibility fixes, tests, and translations.
+
+If this project helps you, a star and fork make it easier for more people to discover it.
+
+---
+
+# 中文说明
+
+> Android 漫画沉浸式悬浮 OCR 与 AI 翻译 MVP，适合漫画、截图和阅读辅助场景。
+
+这个仓库已经改成 **英文优先、中文在后** 的双语 README，方便 GitHub 全球用户第一眼理解项目，同时保留中文开发者阅读体验。
+
+## 为什么值得 Star / Fork
+
+- 目标场景清晰，不是空壳项目。
+- 项目规模适合学习、二次开发和快速改造。
+- README、路线图、贡献入口和部署说明更完整。
+- topics 会尽量贴近当前 GitHub 热门方向，例如 AI、LLM、OpenAI-compatible、TypeScript、developer-tools、automation、local-first、gamedev 等。
 
 ## 功能亮点
 
-- Android 原生 Java 实现，可用 Android Studio 打开。
-- OCR 与翻译模型分开配置，支持 OpenAI 兼容 `/chat/completions` 风格接口。
-- API Key 使用 Android Keystore 加密保存。
-- 悬浮窗权限、屏幕捕获授权与前台服务流程。
-- 点击悬浮球后截取当前屏幕，执行 OCR -> 纠错翻译两阶段处理。
-- 侧边结果面板支持展开 / 收起、复制、重试和快速设置入口。
-- 错误阶段提示：权限、截图、OCR 网络 / 解析、翻译网络 / 解析。
+- Floating overlay workflow for comic reading
+- Screen capture permission flow and foreground service
+- Separate OCR and translation provider configuration
+- Android Keystore storage for API keys
+- Side translation panel with retry and copy actions
 
-## 项目结构
+## 快速开始
 
-```text
-.
-├─ app/
-│  ├─ build.gradle
-│  └─ src/
-│     ├─ main/              # 正式应用源码与资源
-│     └─ debug/             # 调试入口与示例页面
-├─ gradle/wrapper/
-├─ build.gradle
-├─ settings.gradle
-└─ gradlew.bat
-```
+`ash
+./gradlew assembleDebug`n# Windows: gradlew.bat assembleDebug`n# Or open the project in Android Studio and run the app module
+`
 
-## 本地开发
+## 部署与安全
 
-要求：
+- 不要提交 .env、API Key、生成媒体、大型文件、数据库、日志和构建产物。
+- 前端项目可以部署 dist/ 到 GitHub Pages、Vercel、Netlify 或 Nginx。
+- 桌面/移动端项目建议只发布干净环境构建出来的 release 文件。
 
-- Android Studio
-- JDK 17
-- Android SDK，compileSdk 36
+## 后续计划
 
-用 Android Studio 打开项目根目录，等待 Gradle 同步完成后运行 `app` 模块。
-
-## 构建 APK
-
-Windows：
-
-```powershell
-.\gradlew.bat assembleDebug
-```
-
-macOS / Linux：
-
-```bash
-./gradlew assembleDebug
-```
-
-APK 输出位置：
-
-```text
-app/build/outputs/apk/debug/app-debug.apk
-```
-
-## 使用流程
-
-1. 安装 APK。
-2. 打开应用，配置 OCR 模型与翻译模型的 Base URL、模型 ID 和 API Key。
-3. 分别测试 OCR 与翻译模型。
-4. 点击启动悬浮翻译。
-5. 授予悬浮窗权限和屏幕捕获权限。
-6. 切换到漫画 App，点击悬浮球进行翻译。
-
-## MVP 边界
-
-- 不内置任何云服务 API Key，必须由用户自行配置。
-- 截图只在用户点击悬浮球后产生。
-- 当前版本提供侧边译文面板，不做气泡级原图覆盖。
-- 遇到 `FLAG_SECURE` 页面时，Android 系统会阻止截图。
-
-## 注意事项
-
-- `.gradle/`、`build/`、`.idea/`、APK 等本地和构建产物不提交。
-- `local.properties` 是本机 Android SDK 路径，不提交到仓库。
-- 使用屏幕捕获、悬浮窗和网络模型时，请遵守目标平台、模型服务和内容版权规则。
-
-## 感谢与支持
-
-感谢你关注这个 MVP。阅读漫画时被语言挡住真的很可惜，我希望这个项目能把“看懂下一格”这件事变得更自然一点。如果你喜欢这个方向，欢迎 Star、Fork、提 Issue 或给我建议，你的每一次支持都会让我更有劲继续完善它。
+- [ ] Region selection and panel positioning
+- [ ] Bubble overlay translation mode
+- [ ] Offline OCR provider option
+- [ ] Better manga page segmentation
